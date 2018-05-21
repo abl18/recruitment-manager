@@ -35,7 +35,7 @@ public class DatabaseManager {
     
     public void connect() {
         try {
-            conn = DriverManager.getConnection("jdbc:h2:c:\\database\\/db", "sa", "");
+            conn = DriverManager.getConnection("jdbc:h2:tcp://localhost:9097/C://database//db", "sa", "");
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
         }
