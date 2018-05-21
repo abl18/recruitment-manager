@@ -21,6 +21,7 @@ public class UserPersistence {
     
     public List<User> getUserList() {
         // get all User...
+        // sortiert per nachnamen, Hinweis: SELECT * FROM USER ORDER BY NAME z.B.
         return null;
     }
     
