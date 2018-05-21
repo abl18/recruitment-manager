@@ -32,6 +32,7 @@ public class UserPersistence {
     
     public void save (User user) {
         try {
+            //dbm.getPPST("truncate table name");
             PreparedStatement ps = dbm.getPPST("INSERT INTO USER (FIRSTNAME_ID, LASTNAME_ID, ISMALE, ISADMIN, ISACTIVE) VALUES (?,?,?,?,?)");
             
             // TODO!!! 
@@ -76,10 +77,7 @@ public class UserPersistence {
             PreparedStatement ps2 = dbm.getPPST("INSERT INTO NAME (NAME) VALUES (?)");
             ps2.setString(1, name);
             ps2.executeUpdate();
-            ResultSet rs2 = ps2.getGeneratedKeys();
-            while(rs2.next()) {
-                return rs2.getInt(1);
-            }
+            getNameId(name);
         } catch (Exception e) {
             e.printStackTrace();
         }
