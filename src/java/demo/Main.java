@@ -11,7 +11,7 @@ import persistence.UserPersistence;
 
 /**
  *
- * @author florian.brosig
+ * @author Udo Krüger
  */
 public class Main {
     public static void main(String[] args) {
@@ -23,14 +23,14 @@ public class Main {
         System.out.println("HELLO WORLD!");
         
         User user = new User(); // Wir bauen das Object User.
-        user.email = "florian.brosig@bofestconsult.com"; // Wertzuweisung...
         user.firstname = "Florian";
         user.lastname = "Brosig";
-        user.isActive = true;
-        user.isAdmin = true;
-        user.isMale = true;
+        user.email = "florian.brosig@bofestconsult.com";
         user.loginname = "florian.brosig";
         user.passwordHash = "13371337";
+        user.isActive = true;
+        user.isAdmin = true;
+       
         
         UserPersistence up = new UserPersistence(); // Ich erzeuge eine Persistence mit dem Kontext "User".
         up.save(user); // save... 

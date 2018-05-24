@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author florian.brosig
+ * @author Udo Krüger
  */
 public class User {
     public int id;
@@ -19,7 +19,7 @@ public class User {
     public String loginname;
     public String passwordHash;
     
-    public boolean isMale;
+    
     public boolean isAdmin;
     public boolean isActive;
 }

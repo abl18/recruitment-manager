@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author florian.brosig
+ * @author Udo Krüger
  */
 public class DatabaseManager {
 

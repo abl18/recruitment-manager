@@ -4,18 +4,17 @@
  * and open the template in the editor.
  */
 /**
- * Author:  florian.brosig
+ * Author:  Udo Krüger
  * Created: 21.05.2018
  */
 
 CREATE TABLE USER (
     id int auto_INCREMENT PRIMARY KEY,
-    lastname_id int,
     firstname_id int,
+    lastname_id int,
     email_id int,
     loginname_id int,
     passwordHash_id int,
-    isMale boolean,
     isAdmin boolean,
     isActive boolean
 );
@@ -25,7 +24,7 @@ CREATE TABLE NAME (
     name varchar
 );
 
-CREATE TABLE EMAIL (
+ CREATE TABLE EMAIL (
     id int auto_INCREMENT PRIMARY KEY,
     name varchar
 );
