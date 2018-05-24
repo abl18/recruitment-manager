@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo;
 
 import database.DatabaseManager;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import model.User;
 import persistence.UserPersistence;
 
@@ -13,21 +10,25 @@ import persistence.UserPersistence;
  *
  * @author Udo Krüger
  */
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+            throws NoSuchAlgorithmException, InvalidKeySpecException {
         Main main  = new Main();
         main.start();
+    
     }
     
-    public void start() {
+    public void start() throws NoSuchAlgorithmException, InvalidKeySpecException {
         System.out.println("HELLO WORLD!");
+        String password = new String("1234567");
         
         User user = new User(); // Wir bauen das Object User.
         user.firstname = "Florian";
         user.lastname = "Brosig";
         user.email = "florian.brosig@bofestconsult.com";
         user.loginname = "florian.brosig";
-        user.passwordHash = "13371337";
+        user.passwordHash = PasswordHash.createHash(password);
         user.isActive = true;
         user.isAdmin = true;
        
