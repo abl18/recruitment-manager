@@ -19,7 +19,6 @@ public class User {
     public String loginname;
     public String passwordHash;
     
-    
     public boolean isAdmin;
     public boolean isActive;
 }

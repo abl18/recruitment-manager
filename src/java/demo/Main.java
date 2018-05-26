@@ -1,5 +1,6 @@
 package demo;
 
+import crypt.CryptManager;
 import database.DatabaseManager;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -16,7 +17,6 @@ public class Main {
             throws NoSuchAlgorithmException, InvalidKeySpecException {
         Main main  = new Main();
         main.start();
-    
     }
     
     public void start() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -28,7 +28,7 @@ public class Main {
         user.lastname = "Brosig";
         user.email = "florian.brosig@bofestconsult.com";
         user.loginname = "florian.brosig";
-        user.passwordHash = PasswordHash.createHash(password);
+        user.passwordHash = CryptManager.createHash(password);
         user.isActive = true;
         user.isAdmin = true;
        
