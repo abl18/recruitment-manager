@@ -22,14 +22,25 @@ public class UserPersistence {
     public List<User> getUserList() {
         // get all User...
         // sortiert per nachnamen, Hinweis: SELECT * FROM USER ORDER BY NAME z.B.
-        PreparedStatement ps = dbm.getPPST("SELECT * FROM USER WHERE ID = ?");
-        System.out.println(ps);
         return null;
     }
     
-    public User getUserFromId(int id) {
-        // get user from id... 
-        
+    public User getUserFromId(int id){
+        // get user from id...
+        try {            
+            String selectSQL = "SELECT ID, NAME FROM NAME WHERE ID = ?";
+            PreparedStatement ps = dbm.getPPST(selectSQL);
+            ps.setInt(1, 1001);
+            ResultSet rs = ps.executeQuery(selectSQL);
+        while (rs.next()) {
+            String userid = rs.getString("ID");
+            String username = rs.getString("NAME");
+            System.out.println(userid + "\t" + username);
+        }
+       
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+          }
         return null;
     }
     
