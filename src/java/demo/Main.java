@@ -23,7 +23,7 @@ public class Main {
         System.out.println("HELLO WORLD!");
         String password = new String("1234567");
         
-        User user = new User(); // Wir bauen das Object User.
+    /** User user = new User(); // Wir bauen das Object User.
         user.firstname = "Florian";
         user.lastname = "Brosig";
         user.email = "florian.brosig@bofestconsult.com";
@@ -31,9 +31,12 @@ public class Main {
         user.passwordHash = CryptManager.createHash(password);
         user.isActive = true;
         user.isAdmin = true;
-       
+     **/
         
         UserPersistence up = new UserPersistence(); // Ich erzeuge eine Persistence mit dem Kontext "User".
-        up.save(user); // save... 
+        //up.save(user); // save... 
+        up.getUserList();
+        
+        
     }
 }

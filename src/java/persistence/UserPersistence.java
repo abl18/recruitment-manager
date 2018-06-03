@@ -22,6 +22,8 @@ public class UserPersistence {
     public List<User> getUserList() {
         // get all User...
         // sortiert per nachnamen, Hinweis: SELECT * FROM USER ORDER BY NAME z.B.
+        PreparedStatement ps = dbm.getPPST("SELECT * FROM USER WHERE ID = ?");
+        System.out.println(ps);
         return null;
     }
     
@@ -35,11 +37,6 @@ public class UserPersistence {
         try {
             //dbm.getPPST("truncate table name");
             PreparedStatement ps = dbm.getPPST("INSERT INTO USER (LASTNAME_ID, FIRSTNAME_ID, EMAIL_ID, LOGINNAME_ID, PASSWORDHASH_ID, ISADMIN, ISACTIVE,) VALUES (?,?,?,?,?,?,?)");
-            
-            // TODO!!! 
-            // email speichern, DONE
-            // loginname speichern, DONE
-            // password hashen und dann speichern!!!
             
             ps.setInt(1, getNameId(user.lastname));
             ps.setInt(2, getNameId(user.firstname));

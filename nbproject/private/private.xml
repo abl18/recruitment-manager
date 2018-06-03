@@ -5,6 +5,7 @@
         <group>
             <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/persistence/UserPersistence.java</file>
             <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/model/User.java</file>
+            <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/crypt/CryptManager.java</file>
             <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/database/Create.sql</file>
             <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/demo/Main.java</file>
             <file>file:/E:/NetBeansProjects/recruitment-manager/src/java/database/DatabaseManager.java</file>
