@@ -6,7 +6,9 @@
 package persistence;
 
 import database.DatabaseManager;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.List;
 import model.User;
@@ -18,6 +20,8 @@ import model.User;
 public class UserPersistence {
     
     DatabaseManager dbm = new DatabaseManager();
+    Connection conn;
+    Statement stmt = null;
     
     public List<User> getUserList() {
         // get all User...
@@ -27,15 +31,20 @@ public class UserPersistence {
     
     public User getUserFromId(int id){
         // get user from id...
-        try {            
-            String selectSQL = "SELECT ID, NAME FROM NAME WHERE ID = ?";
-            PreparedStatement ps = dbm.getPPST(selectSQL);
-            ps.setInt(1, 1001);
-            ResultSet rs = ps.executeQuery(selectSQL);
+        
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT ID, NAME FROM NAME WHERE ID = ?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            String userid = rs.getString("ID");
+            
+            int userid = rs.getInt("ID");
             String username = rs.getString("NAME");
-            System.out.println(userid + "\t" + username);
+            User user = new User();
+            user.id = userid;
+            user.firstname = username;
+            System.out.println(user);
+            return user;            
         }
        
         } catch (Exception e) {

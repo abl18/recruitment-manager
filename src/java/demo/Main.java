@@ -35,7 +35,7 @@ public class Main {
         
         UserPersistence up = new UserPersistence(); // Ich erzeuge eine Persistence mit dem Kontext "User".
         //up.save(user); // save... 
-        up.getUserList();
+        up.getUserFromId(21);
         
         
     }
