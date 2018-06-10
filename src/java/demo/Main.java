@@ -23,20 +23,18 @@ public class Main {
         System.out.println("HELLO WORLD!");
         String password = new String("1234567");
         
-     User user = new User(); // Wir bauen das Object User.
-        user.firstname = "Udo";
-        user.lastname = "Krueger";
-        user.email = "blah@keks.de";
-        user.loginname = "udo.krueger";
-        user.passwordHash = CryptManager.createHash(password);
-        user.isActive = true;
-        user.isAdmin = true;
+        User user = new User(1, "Udo", 
+                "Kruegerzwei", 
+                "blah@keks.de",
+                "udo.krueger",
+                CryptManager.createHash(password), 
+                true, true);
      
         
         UserPersistence up = new UserPersistence(); // Ich erzeuge eine Persistence mit dem Kontext "User".
-        up.save(user); // save... 
+        //up.save(user); // save... 
         //up.getUserFromId(21);
-        //up.getUserList();
+        System.out.println(up.getUserList());
         
         
     }
