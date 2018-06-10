@@ -5,10 +5,8 @@
  */
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class DatabaseManager {
 
-    Connection conn;
+    Connection conn = null;
     
     public PreparedStatement getPPST(String sql) {
         try {
